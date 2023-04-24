@@ -1,0 +1,7 @@
+<% layout('layouts/boilerplate')%>
+
+<h1 style="text-align:center;">Our Courses</h1>
+<% offeredCourses.forEach(course => { %>
+    <h5>Title: <%= course.title %> </h5>
+    <span>Cost: $ <%= course.cost %> </span>
+<% }); %>
