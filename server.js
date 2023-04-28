@@ -64,7 +64,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('janay')
 })
 //app.get('/courses', homeController.showCourses)
 //app.get('/contact', homeController.showSignUp)
@@ -72,19 +72,19 @@ app.get('/', (req, res) => {
 
 
 
-//Create subscribersController routes
+//Create subscribersController routes for administrator access
 app.get("/subscribers", subscribersController.getAllSubscribers); //Add a route to view all subscribers.
 app.get("/contact", subscribersController.getSubscriptionPage); //Add a rpute to view the contact page.
 app.post("/subscribe", subscribersController.saveSubscriber); //Add a route to handle posted form data
 
-//Create usersController routes
+//Create usersController routes for administrator access
 app.get('/users', usersController.index, usersController.indexView);
 app.get('/users/new', usersController.new);
 app.post('/users/create', usersController.create, usersController.redirectView)
 app.get('/users/:id', usersController.show, usersController.showView)
-app.get('/users/:id/edit', usersController.edit)
-app.put('/users/:id/update', usersController.update, usersController.redirectView)
-app.delete('/users/:id', usersController.delete)
+app.get("/users/:id/edit", usersController.edit); //Routes to handle viewing.
+app.put("/users/:id/update", usersController.update, usersController.redirectView); //Process data from the edit form, and display the user show page
+app.delete("/users/:id/delete", usersController.delete, usersController.redirectView);
 
 app.listen(4040, () => {
     console.log('Listening on http://localhost:4040')
