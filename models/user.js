@@ -43,7 +43,7 @@ userSchema.virtual('fullName')
 userSchema.pre('save', function(next) {
     let user = this; //Use the function keyword in the callback.
     if (user.subscribedAccount === undefined) { //Add a quick conditional check for existing subscriber connections.
-        Subscriber.findOne({ //Query foor a single subscriber.
+        Subscriber.findOne({ //Query for a single subscriber.
             email: user.email
         })
             .then(subscriber => { 

@@ -24,7 +24,7 @@ const usersController = require('./controllers/usersController');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 //const { reset } = require('nodemon');
-mongoose.connect('mongodb+srv://EOlaw146:Olawalee_.146@cluster0.4wv68hn.mongodb.net/majidahCourses?retryWrites=true&w=majority', { 
+mongoose.connect('mongodb+srv://EOlaw146:Olawalee_.146@cluster0.4wv68hn.mongodb.net/Courses?retryWrites=true&w=majority', { 
     useNewUrlParser: true, 
     useUnifiedTopology: true,
 });
@@ -65,7 +65,7 @@ app.use((err, req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-    res.render('janay')
+    res.send('Welcome to the Database')
 })
 //app.get('/courses', homeController.showCourses)
 //app.get('/contact', homeController.showSignUp)
