@@ -24,10 +24,7 @@ const usersController = require('./controllers/usersController');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 //const { reset } = require('nodemon');
-mongoose.connect('mongodb+srv://EOlaw146:Olawalee_.146@cluster0.4wv68hn.mongodb.net/Courses?retryWrites=true&w=majority', { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true,
-});
+
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
